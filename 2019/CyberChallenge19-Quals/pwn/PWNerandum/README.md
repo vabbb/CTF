@@ -14,7 +14,7 @@ That's when I found out that the function used to read the input password has a 
 ![Vulnerable Function](images/vuln_func.png)
 
 Because the inputted password buffer (in the bss section) is immediately followed by the char which determines whether or 
-not we are the "premium user", by overflowing onto it and writing 0x1, we are able to gain the "premium" user privileges.
+not we are the "premium user", by overflowing into it and writing 0x1, we are able to gain the "premium" user privileges.
 
 ![bss](images/bss.png)
 
