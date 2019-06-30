@@ -37,5 +37,5 @@ Exiting the program now by selecting option '9' will trigger our exploit, and gi
 
 ## Flag
 
-ccit{0n3_byt3_t0_rul3_th3m_4ll}
+`ccit{0n3_byt3_t0_rul3_th3m_4ll}`
 
