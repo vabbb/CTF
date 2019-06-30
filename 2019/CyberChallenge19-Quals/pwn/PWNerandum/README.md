@@ -3,7 +3,7 @@
 For this challenge we are provided with a stripped 64bit ELF binary with all protections enabled (RELRO, canary, NX, PIE), and 
 the libc it uses on the remote server.
 After disassembling the binary in ghidra, I noticed that there is a hidden menu, accessible only by a "premium user".
-In order to access it, the program asks us to insert password, which will be hashed with and compared to some value
+In order to access it, the program asks us to insert a password, which will be hashed with and compared to some value
 stored in rodata.
 
 After unsuccessfully trying to guess the password by using hashcat and some rainbow tables online, I decided to look at the 
