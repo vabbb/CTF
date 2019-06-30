@@ -2,6 +2,9 @@
 
 For this challenge we are provided with a stripped 64bit ELF binary with all protections enabled (RELRO, canary, NX, PIE), and 
 the libc it uses on the remote server.
+
+## First Vulnerability
+
 After disassembling the binary in ghidra, I noticed that there is a hidden menu, accessible only by a "premium user".
 In order to access it, the program asks us to insert a password, which will be hashed and compared to some value
 stored in rodata.
@@ -19,6 +22,8 @@ not we are the "premium user", by overflowing into it and writing 0x1, we are ab
 ![bss](images/bss.png)
 
 Such privileges allow us to access 2 new options in the menu: "modify memo" and "modify banner".
+
+## Second Vulnerability
 
 I decided to look into the "modify banner" function first since, at this point, I had already reversed the part of the 
 binary that had to do with the notes, and wasn't able to find any vulnerabilities there. By fuzzing a bit with different 
